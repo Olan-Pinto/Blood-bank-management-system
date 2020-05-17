@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>REQUEST BLOOD</title>
+    <link rel="stylesheet" type="text/css" href="/css/style_main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <script>
+          $(function(){
+              $("#datepicker").datepicker({
+                minDate: 0,
+                maxDate: "+6D",
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+              changeYear: true
+              
+              });
+              
+          });
+  </script>
+  <body>
+<div class="login-box">
+  <h1>Request Blood</h1>
+<form name="myform" action="/submit" method="POST" onsubmit="setTimeout('this.reset()',1000);" >
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" name="Patient_Name" placeholder="Patient Name" required/>
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <input   name="Phone_Number" id="cnum" type="tel" placeholder="10 digit Indian Number" pattern="^((?!(0))[0-9]{10})$" title="Must be 10 digit mobile number " required/>
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-id-card" aria-hidden="true"></i>
+    <input id="aadhar" type="tel"  name="Aadhar_Number" placeholder="Aadhar Number" pattern="^([0-9]{12})$" title="Must be 12 digits" required/>
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <input type="email" name="Email_Id"  placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />
+  </div>
+  <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" -->
+  <div class="textbox">
+    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+    <input type="text"  name="City" placeholder="City" required />
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-calendar" aria-hidden="true"></i>
+    <label for="datepicker">Select Date</label>
+    <input type="text" name="Date" id="datepicker"   required />
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-tint" aria-hidden="true"></i>
+  <input id="bg"  name="Blood_Group" list = "bloodgroup" placeholder="Blood-Group" required/ ><br>
+      <datalist id="bloodgroup">
+        <option value="A+ve">A+ve</option>
+        <option value="B+ve">B+ve</option>
+        <option value="AB+ve">AB+ve</option>
+        <option value="O+ve">O+ve</option>
+        <option value="A-ve">A-ve</option>
+        <option value="B-ve">B-ve</option>
+        <option value="AB-ve">AB-ve</option>
+        <option value="O-ve">O-ve</option>
+      </datalist>
+        <!-- <input type="checkbox" value="A+ve">
+        <input type="checkbox" name="A-ve">
+        <input type="checkbox" name="B+ve">
+        <input type="checkbox" name="B-ve">
+     -->
+  </div>
+  <!-- <div class="textbox"> -->
+    <!-- <i class="fa fa-location-arrow" aria-hidden="true"></i> -->
+    <input type="hidden" id="latid" name="Latitude" value="" >
+  <!-- </div> -->
+  <!-- <div class="textbox"> -->
+    <!-- <i class="fa fa-location-arrow" aria-hidden="true"></i> -->
+    <input type="hidden" id="lonid" name="Longitude" value="">
+  <!-- </div> -->
+  <input type="submit" id="btn" class="btn"  value ="Submit"  >
+  <span class="psw"><a href="/login">Already a User?</a></span>
+  </form>
+<script>
+   navigator.geolocation.getCurrentPosition(function(location) {
+            var lat = location.coords.latitude;
+            var lon =location.coords.longitude;
+            document.getElementById("latid").value=lat;
+            document.getElementById("lonid").value=lon;
+            // console.log(lat)
+            // console.log(lon)
+   })
+    //console.log(lat);
+  //  console.log(lan);
+</script>
+</body>
+</html>
+
+

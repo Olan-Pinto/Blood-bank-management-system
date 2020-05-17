@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <title>
+            map
+        </title>
+        <style>
+            #map{
+                position: absolute;
+                top: 0;
+                bottom : 0;
+                left : 0;
+                right : 0;
+                width :100%;
+                height:100%;
+            }
+        </style>
+    </head>
+        <body>
+            <div id="map"></div>
+            <script>
+               
+                var map=L.map('map').setView([13,74.8],10);
+                L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=qoSNa5YFhzFQTn2BNpax',{
+                    attribution :'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+                }).addTo(map);
+            navigator.geolocation.getCurrentPosition(function(location) {
+            var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+            var marker = L.marker(latlng).addTo(map);
+            var circle =L.circle(latlng,{
+                color:'red',
+                fillcolor:'#f03',
+                fillOpacity:0.5,
+                radius:15000
+            }).addTo(map);
+
+             })
+            var marker1 =L.marker([13.021283,74.793141]).addTo(map);
+            marker1.bindPopup("Srinivas Hospital<br> Phone no. 0824 247 8586").openPopup;
+            var marker2 =L.marker([12.987790,74.801595]).addTo(map);
+            marker2.bindPopup("Padmavathi Hospital <br> Phone no.  0824 247 6600").openPopup;
+            var marker3 =L.marker([12.8687,74.8399]).addTo(map);
+            marker3.bindPopup("KMC Manipal Hospital <br> Phone no. 0820 292 2761").openPopup;
+            var marker4 =L.marker([12.8719,74.8483]).addTo(map);
+            marker4.bindPopup("KMC Mangalore Hospital <br> Phone no.  0824 244 5858 ").openPopup;
+            var marker5 =L.marker([12.9941,74.7982]).addTo(map);
+            marker5.bindPopup("Atharva Hospital  <br> Phone no. 0824 247 7214").openPopup;
+            var marker6 =L.marker([12.8994,74.8460]).addTo(map);
+            marker6.bindPopup("AJ Hospital  <br> Phone no. 0824 222 5533").openPopup;
+            var marker7 =L.marker([12.8730,74.8412]).addTo(map);
+            marker7.bindPopup("Yenepoya  Hospital  <br> Phone no. 0824 423 8855").openPopup;
+            var marker8 =L.marker([12.8797,74.8530]).addTo(map);
+            marker8.bindPopup("City Hospital <br> Phone no. 0824 221 7901").openPopup;
+            var marker9 =L.marker([12.8658,74.8599]).addTo(map);
+            marker9.bindPopup("Father Muller Hospital <br> Phone no.  082452 32555").openPopup;
+            var marker10 =L.marker([12.8728,74.8567]).addTo(map);
+            marker10.bindPopup("Colaco Hospital <br> Phone no. 0824 243 4444").openPopup;
+            var marker11 =L.marker([12.8677,74.8541]).addTo(map);
+            marker11.bindPopup("Unity Hospital <br> Phone no.  0824 424 5555").openPopup;
+            var marker12 =L.marker([12.880672,74.85352]).addTo(map);
+            marker12.bindPopup("Tejaswini Hospital <br> Phone no. 0824 342 5555").openPopup;
+            var marker13 =L.marker([12.8674,74.8431]).addTo(map);
+            marker13.bindPopup("Mims Hospital <br> Phone no. 0824 123 4567").openPopup;
+            var marker14 =L.marker([12.9434,74.8147]).addTo(map);
+            marker14.bindPopup("NPMT Hospital <br> Phone no. 0824 321 7654").openPopup;
+            var marker15 =L.marker([12.8680,74.8501]).addTo(map);
+            marker15.bindPopup("Indira Hospital <br> Phone no. 0824 636 2786").openPopup;
+            var marker16 =L.marker([12.8681,74.8482]).addTo(map);
+            marker16.bindPopup("Athena Hospital <br> Phone no. 0824 997 2757").openPopup;
+            var marker17 =L.marker([12.9835,74.8126]).addTo(map);
+            marker17.bindPopup("Misquith Hospital <br> Phone no. 0824 910 6236").openPopup;
+            var marker18 =L.marker([12.86515,74.83877]).addTo(map);
+            marker18.bindPopup("GOvernment Lady Goschen Hospital <br> Phone no. 0824 456 6519").openPopup;
+            var marker19 =L.marker([12.87515,74.855236]).addTo(map);
+            marker19.bindPopup("SCS Hospital <br> Phone no. 0824 474 0190").openPopup;
+            var marker20 =L.marker([12.8704,74.8629]).addTo(map);
+            marker20.bindPopup("OMEGA Hospital <br> Phone no. 0824 393 4483").openPopup;
+            var marker21 =L.marker([12.8667,74.8792]).addTo(map);
+            marker21.bindPopup("Indiana Hospital <br> Phone no. 0824 297 9114").openPopup;
+            var marker22 =L.marker([12.8773,74.8582]).addTo(map);
+            marker22.bindPopup("Harmony Hospital <br> Phone no. 0824 358 2791").openPopup;
+            var marker23 =L.marker([13.0658,74.8523]).addTo(map);
+            marker23.bindPopup("Concetta Hospital <br> Phone no. 0824 396 3825").openPopup;
+            var marker24 =L.marker([12.8919,74.8463]).addTo(map);
+            marker24.bindPopup("Dr. TMA Pai Rotary  Hospital <br> Phone no. 0824 336 0380").openPopup;
+            var marker25 =L.marker([12.8722,74.8428]).addTo(map);
+            marker25.bindPopup("Jayashree Hospital <br> Phone no. 0824 911 5359").openPopup;
+            var marker26 =L.marker([12.8674,74.8594]).addTo(map);
+            marker26.bindPopup("Wenlock Hospital <br> Phone no. 0824 385 2086").openPopup;
+            var marker27 =L.marker([13.2368,74.7467]).addTo(map);
+            marker27.bindPopup("KS Hegde Hospital <br> Phone no. 0824 987 6543").openPopup;
+            var marker28 =L.marker([13.3532,74.7892]).addTo(map);
+            marker28.bindPopup("Manipal Hospital <br> Phone no. 0824 135 2468").openPopup;
+            var marker29 =L.marker([13.0095,74.7963]).addTo(map);
+            marker29.bindPopup("HCC Hospital <br> Phone no. 0824 531 9752").openPopup;
+            var marker30=L.marker([12.9904,74.7995]).addTo(map);
+            marker30.bindPopup("Chirashree Hospital <br> Phone no. 0824 128 4509").openPopup;
+          
+          
+
+            </script>
+            <script></script>
+        </body>
+    
+    
+</html>

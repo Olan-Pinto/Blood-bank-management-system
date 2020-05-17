@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LOGIN!!
+        </title>
+        <link rel="stylesheet" type="text/css" href="/css/style_main.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <script>
+         $(function(){
+              $("#datepicker").datepicker({
+                minDate: 0,
+                maxDate: "+6D",
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+              changeYear: true
+              
+              });
+              
+          });
+    </script>
+    <body>
+        <div class="login-box">
+            <h1>REGISTERED USER</h1>
+        <form action="/profile" method="POST" onsubmit="setTimeout('this.reset()',1000);">     
+            <div class="textbox">
+                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <input id="aadhar" type="tel"  name="Aadhar_Number" placeholder="Aadhar Number" pattern="^([0-9]{12})$"  title="Must be 12 digits" required/>
+            </div>
+            <div class="textbox">
+                <i class="fa fa-tint" aria-hidden="true"></i>
+              <input id="bg"  name="Blood_Group" list = "bloodgroup" placeholder="Blood-Group" required/ ><br>
+                  <datalist id="bloodgroup">
+                    <option value="A+ve">A+ve</option>
+                    <option value="B+ve">B+ve</option>
+                    <option value="AB+ve">AB+ve</option>
+                    <option value="O+ve">O+ve</option>
+                    <option value="A-ve">A-ve</option>
+                    <option value="B-ve">B-ve</option>
+                    <option value="AB-ve">AB-ve</option>
+                    <option value="O-ve">O-ve</option>
+                  </datalist>
+              </div>
+            <div class="textbox">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <label for="datepicker">Select Date</label>
+                <input type="text" name="Date" id="datepicker"   required />
+            </div>
+            <input type="hidden" id="latid" name="Latitude" value="" >
+            <!-- </div> -->
+            <!-- <div class="textbox"> -->
+              <!-- <i class="fa fa-location-arrow" aria-hidden="true"></i> -->
+              <input type="hidden" id="lonid" name="Longitude" value="">
+          
+            <input type="submit" id="btn" class="btn"  value ="Submit"   >
+            
+            
+          
+          </form>
+          <script>
+            navigator.geolocation.getCurrentPosition(function(location) {
+                     var lat = location.coords.latitude;
+                     var lon =location.coords.longitude;
+                     document.getElementById("latid").value=lat;
+                     document.getElementById("lonid").value=lon;
+                     // console.log(lat)
+                     // console.log(lon)
+            })
+             //console.log(lat);
+           //  console.log(lan);
+         </script>
+
+
+    </body>
+</html>

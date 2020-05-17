@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>
+            NEED BLOOD!!
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="/css/style_main.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<script>
+    $(function(){
+         $("#datepicker").datepicker({
+           minDate: 0,
+           maxDate: "+6D",
+           dateFormat: "yy-mm-dd",
+           changeMonth: true,
+         changeYear: true
+         
+         });
+         
+     });
+</script>
+<body>
+    <form name="myform" id="Table1" method="POST" action="/final">
+        <div class="login-box">
+            <h1>SUCCESSFULLY RECEIVED</h1>
+        <div class="textbox">
+            <i class="fa fa-id-card" aria-hidden="true"></i>
+            <input id="aadhar" type="tel"  name="Aadhar_Number" placeholder="Aadhar Number" pattern="^([0-9]{12})$" required/>
+        </div>
+        <div class="textbox">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <label for="datepicker">Select Date</label>
+            <input type="text" name="Date" id="datepicker"   required />
+        </div>
+        <!-- <div>
+            <table >
+                <tr>
+                   <th></th><th>AADHAR NUMBER</th><th>DATE OF REQUEST</th>
+                </tr>
+             
+                <% for (var i = 0; i < rcheck.length; i++) { %>
+                 <tr>
+                  
+                   <td><%= rcheck[i].Aadhar_Number %></td>
+                   <td><%= rcheck[i].Date %></td>
+                   <td><input type="hidden" name="Aadhar_Number" id="ano" val=""></td>
+                   <td><input type="hidden" name="Date" value=rcheck[i].Date></td>
+                   <td><input type="checkbox" name=checknow></td>
+                 </tr>    
+                <% } %>
+             </table>
+             </div> -->
+             <div>
+                <input type="submit" id="btn" class="btn"  value ="Submit" >
+             </div>
+    </form>
+
+ </body>
+ <!-- <script>
+     function GetSelected() {
+        //Reference the Table.
+        var grid = document.getElementById("Table1");
+ 
+        //Reference the CheckBoxes in Table.
+        var checkBoxes = grid.getElementsByTagName("INPUT");
+
+ 
+        //Loop through the CheckBoxes.
+        for (var i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].checked) {
+                var row = checkBoxes[i].parentNode.parentNode;
+              var an = row.cells[0].innerHTML;
+                var d = row.cells[1].innerHTML;
+            }
+            console.log(an);
+            document.getElementById("ano").val=an;
+        }
+ 
+        //Display selected Row data in Alert Box.
+        //alert(message);
+    }
+ </script> -->
+ </html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            help page
+        </title>
+
+    <!-- <link href="/css/pugstyle.css" rel="stylesheet" type="text/css"> -->
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        </style>
+</head>
+<body>
+    <div>
+        <a href="/maps" role="button">A MAP FOR YOU</a>
+    </div>
+    <div>
+<table >
+    <tr>
+       <th>HOSPITAL NAME</th><th>CONTACT NUMBER</th><th>BOTTLES AVAILABLE</th>
+    </tr>
+ 
+    <% for (var i = 0; i < message.length; i++) { %>
+     <tr>
+       <td><%= message[i].Hospital_Name %></td>
+       <td><%= message[i].Contact_No %></td>
+       <td><%= message[i].Amount_Of_Blood %></td>
+     </tr>    
+    <% } %>
+ </table>
+ </div>
+ </body>
+ </html>

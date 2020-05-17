@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DONATE BLOOD</title>
+    <link rel="stylesheet" type="text/css" href="/css/style_main.css">
+  </head>
+  <body>
+<div class="login-box">
+  <h1>DONATE BLOOD</h1>
+<form name="myform" action="/donated" method="POST" id="myform" >
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" name="Donor_Name" placeholder="Donor Name" required/>
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <input   name="Phone_Number" id="cnum" type="tel" placeholder="10 digit Indian Number" pattern="^((?!(0))[0-9]{10})$" title="Must be 10 digits mobile number" required/>
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-id-card" aria-hidden="true"></i>
+    <input id="aadhar" type="tel"  name="Aadhar_Number" placeholder="Aadhar Number" pattern="^([0-9]{12})$"  title="Must be 12 digits" required/>
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <input type="email" name="Email_Id"  placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required/>
+  </div>
+  <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" -->
+  <div class="textbox">
+    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+    <input type="text"  name="City" placeholder="City" required />
+  </div>
+
+  <div class="textbox">
+    <i class="fa fa-tint" aria-hidden="true"></i>
+  <input id="bg"  name="Blood_Group" list = "bloodgroup" placeholder="Blood-Group" required/ ><br>
+      <datalist id="bloodgroup">
+        <option value="A+ve">A+ve</option>
+        <option value="B+ve">B+ve</option>
+        <option value="AB+ve">AB+ve</option>
+        <option value="O+ve">O+ve</option>
+        <option value="A-ve">A-ve</option>
+        <option value="B-ve">B-ve</option>
+        <option value="AB-ve">AB-ve</option>
+        <option value="O-ve">O-ve</option>
+      </datalist>
+  </div>
+  <div class="textbox"> 
+  <label for="o18"></label>I AM OVER THE AGE OF 18<br>
+  <input type="checkbox" id="chkAgree" name="age" value="o18"  required><br>
+</div>
+  <input type="submit" id="btn" class="btn"  value ="Submit" >
+  </form>
+
+
+</body>
+</html>
+
+
